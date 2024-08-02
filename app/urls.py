@@ -14,7 +14,7 @@ from core.views import CategoriaViewSet, EditoraViewSet, AutorViewSet, LivroView
 router = DefaultRouter()
 
 
-router.register(r"users", CategoriaViewSet, basename="users")
+router.register(r"users", UserViewSet, basename="users")
 router.register(r"Categorias", CategoriaViewSet, basename="categorias")
 router.register(r"Editoras", EditoraViewSet, basename="editoras")
 router.register(r"Autores", AutorViewSet, basename="autores")
