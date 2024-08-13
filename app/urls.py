@@ -1,9 +1,7 @@
-from django.contrib import admin
-from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
-
-from uploader.router import router as uploader_router
+from django.contrib import admin
+from django.urls import include, path
 
 from drf_spectacular.views import (
     SpectacularAPIView,
@@ -20,6 +18,7 @@ from core.views import (
     LivroViewSet,
     UserViewSet,
 )
+from uploader.router import router as uploader_router
 
 router = DefaultRouter()
 
@@ -36,6 +35,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # OpenAPI 3
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
+    #uploader
     path("api/media/", include(uploader_router.urls)),
 
 
