@@ -16,7 +16,7 @@ class UserAdmin(BaseUserAdmin):
     list_display = ["email", "name"]
     fieldsets = (
         (None, {"fields": ("email", "password")}),
-        (_("Personal Info"), {"fields": ("name",)}),
+               (_("Personal Info"), {"fields": ("name","foto")}), 
         (
             _("Permissions"),
             {
@@ -28,6 +28,8 @@ class UserAdmin(BaseUserAdmin):
             },
         ),
         (_("Important dates"), {"fields": ("last_login",)}),
+           (_("Groups"), {"fields": ("groups",)}),
+        (_("User Permissions"), {"fields": ("user_permissions",)}),
     )
     readonly_fields = ["last_login"]
     add_fieldsets = (
@@ -49,30 +51,30 @@ class UserAdmin(BaseUserAdmin):
     )
 @admin.register(Autor)
 class AutorAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'email')
-    search_fields = ('nome', 'email')
-    list_filter = ('nome',)
-    ordering = ('nome', 'email')
+   list_display = ("nome", "email")
+search_fields = ("nome", "email")
+list_filter = ("nome",)
+ordering = ("nome", "email")
 
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
-    list_display = ('descricao',)
-    search_fields = ('descricao',)
-    list_filter = ('descricao',)
-    ordering = ('descricao',)
+     list_display = ("descricao",)
+search_fields = ("descricao",)
+list_filter = ("descricao",)
+ordering = ("descricao",)
 
 @admin.register(Editora)
 class EditoraAdmin(admin.ModelAdmin):
-    list_display = ('nome','cidade','email')
-    search_fields = ('nome',)
-    list_filter = ('nome',)
-    ordering = ('nome',)
+     list_display = ("nome", "cidade", "email")
+search_fields = ("nome", "cidade", "email")
+list_filter = ("nome", "cidade", "email")
+ordering = ("nome",)
 
 @admin.register(Livro)
 class LivroAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'editora', 'categoria')
-    search_fields = ('titulo', 'editora__nome', 'categoria__descricao')
-    list_filter = ('editora', 'categoria')
-    ordering = ('titulo', 'editora', 'categoria')
-    list_per_page = 25
+     list_display = ("titulo", "editora", "categoria")
+search_fields = ("titulo", "editora__nome", "categoria__descricao")
+list_filter = ("editora", "categoria")
+ordering = ("titulo", "editora", "categoria")
+list_per_page = 25
 
