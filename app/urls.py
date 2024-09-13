@@ -14,7 +14,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from core.views import (
     AutorViewSet,
     CategoriaViewSet,
-    CompraViewSet, 
+    CompraViewSet,
     EditoraViewSet,
     LivroViewSet,
     UserViewSet,

@@ -2,6 +2,7 @@ from rest_framework.serializers import CharField, ModelSerializer, SerializerMet
 
 from core.models import Compra, ItensCompra
 
+
 class ItensCompraSerializer(ModelSerializer):
     total = SerializerMethodField()
 
