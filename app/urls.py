@@ -14,6 +14,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from core.views import (
     AutorViewSet,
     CategoriaViewSet,
+    CompraViewSet, 
     EditoraViewSet,
     LivroViewSet,
     UserViewSet,
@@ -28,6 +29,7 @@ router.register(r"Categorias", CategoriaViewSet, basename="categorias")
 router.register(r"Editoras", EditoraViewSet, basename="editoras")
 router.register(r"Autores", AutorViewSet, basename="autores")
 router.register(r"Livros", LivroViewSet, basename="livros")
+router.register(r"compras", CompraViewSet, basename="compras")
 
 
 
