@@ -56,6 +56,7 @@ class CompraSerializer(ModelSerializer):
 
 
 class CriarEditarCompraSerializer(ModelSerializer):
+    usuario = HiddenField(default=CurrentUserDefault())
     itens = CriarEditarItensCompraSerializer(many=True)
     class Meta:
         model = Compra
